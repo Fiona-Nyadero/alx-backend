@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''''''
+'''Module creates a simple pagination pagei'''
 import csv
 import math
 from typing import List
@@ -27,16 +27,13 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         '''Function returns a simple paginated page'''
         assert isinstance(page, int) and isinstance(page_size, int)
-        assert page > 0 and page_size > 0, "Both must be positive integers!"
+        assert page > 0 and page_size > 0
         first, last = self.index_range(page, page_size)
         return self.dataset()[first:last]
 
     def index_range(self, page: int, page_size: int) -> tuple:
         '''Function returns a tuple containing
         a start index and an end index'''
-
-        if page <= 0 or page_size <= 0:
-            raise ValueError("Provide a positive integer!")
 
         start_idx = (page - 1) * page_size
         end_idx = start_idx + page_size
