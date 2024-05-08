@@ -6,6 +6,8 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
+    '''BasicCache is an inherited class from BaseCaching'''
+
     def __init__(self):
         '''Initialises the class BasicCache'''
         self.cache_data = {}
