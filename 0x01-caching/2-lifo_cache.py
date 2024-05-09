@@ -13,9 +13,7 @@ class LIFOCache(BaseCaching):
 
     def put(self, key, item):
         '''Assigns item value to key in dictionary'''
-        if key is None or item is None:
-            return
-        else:
+        if key is not None or item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 all_keys = list(self.cache_data.keys())
                 discarded = all_keys[-1]
