@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''Module creates an i18n app'''
 from flask import Flask, render_template, request
-from flask_babel import babel
+from flask_babel import Babel
 
 
 class Config:
